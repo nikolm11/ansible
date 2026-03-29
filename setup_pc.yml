@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: add new software repository
+    ansible.builtin.apt_repository:
+      repo: ppa:deadsnakes/ppa
+
+  - name: update cache
+    apt:
+      update_cache: yes
